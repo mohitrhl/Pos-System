@@ -26,7 +26,8 @@ public class securityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        return http.sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        return http.sessionManagement(management ->
+                        management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(Authorize -> Authorize
                         .requestMatchers("/api/**").authenticated()
                         .requestMatchers("/api/super-admin/**").hasRole("ADMIN")
@@ -36,8 +37,7 @@ public class securityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .exceptionHandling(
                         exceptionHandler -> exceptionHandler
-                                .authenticationEntryPoint(customAuthenticationEntryPoint))
-                .build();
+                                .authenticationEntryPoint(customAuthenticationEntryPoint)).build();
     }
 
     @Bean
@@ -47,6 +47,7 @@ public class securityConfig {
 
     private CorsConfigurationSource corsConfigurationSource() {
         return new CorsConfigurationSource() {
+
             @Override
             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                 CorsConfiguration cfg = new CorsConfiguration();

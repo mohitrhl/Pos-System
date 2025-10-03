@@ -1,7 +1,7 @@
 package com.mohit.payload.dto;
 
-import com.zosh.domain.StoreStatus;
-import com.zosh.modal.StoreContact;
+import com.mohit.domain.StoreStatus;
+import com.mohit.modal.StoreContact;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 public class StoreDTO {
     private Long id;
     private String brand;

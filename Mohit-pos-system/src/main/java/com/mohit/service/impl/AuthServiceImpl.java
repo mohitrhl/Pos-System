@@ -3,12 +3,15 @@ package com.mohit.service.impl;
 import com.mohit.configuration.JwtProvider;
 import com.mohit.domain.UserRole;
 import com.mohit.exception.UserException;
+import com.mohit.mapper.UserMapper;
+import com.mohit.modal.PasswordResetToken;
 import com.mohit.modal.User;
 import com.mohit.payload.dto.UserDTO;
 import com.mohit.payload.response.AuthResponse;
 import com.mohit.repository.PasswordResetTokenRepository;
 import com.mohit.repository.UserRepository;
 import com.mohit.service.AuthService;
+import com.mohit.service.EmailService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -123,8 +126,6 @@ public class AuthServiceImpl implements AuthService {
 
             throw new UserException("user not found with given email");
         }
-
-
 
         String token = UUID.randomUUID().toString();
         PasswordResetToken resetToken = PasswordResetToken.builder()

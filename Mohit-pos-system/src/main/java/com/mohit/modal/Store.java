@@ -1,7 +1,7 @@
 package com.mohit.modal;
 
 
-import com.zosh.domain.StoreStatus;
+import com.mohit.domain.StoreStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -40,6 +40,7 @@ public class Store {
 
     // Contact Information
     @Embedded
+    @Builder.Default
     private StoreContact contact=new StoreContact();
 
     @PrePersist

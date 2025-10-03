@@ -6,10 +6,6 @@ import com.mohit.payload.dto.StoreDTO;
 
 public class StoreMapper {
 
-
-
-
-
         public static StoreDTO toDto(Store store) {
             return StoreDTO.builder()
                     .id(store.getId())

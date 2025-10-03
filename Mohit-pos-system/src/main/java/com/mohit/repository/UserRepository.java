@@ -47,27 +47,4 @@ int countByStoreAdminIdAndRoles(@Param("storeAdminId") Long storeAdminId,
 	List<UserDTO> findInactiveCashiers(@Param("storeAdminId") Long storeAdminId,
 									   @Param("cutoffDate") LocalDateTime cutoffDate);
 
-
-
-// WHERE u.lastLogin < :cutoffDate
-//	@Query("""
-//        SELECT u.fullName
-//        FROM User u
-//        Where u.branch.store.storeAdmin.id=:storeAdminId
-//        AND u.role = com.zosh.domain.UserRole.ROLE_BRANCH_CASHIER
-//    """)
-//	List<String> findInactiveCashiers(@Param("storeAdminId") Long storeAdminId,
-//									  @Param("cutoffDate") LocalDateTime cutoffDate
-//									  );
-
-
-//	@Query("""
-//    SELECT u FROM User u
-//    WHERE u.store.id = :storeAdminId
-//    AND u.role = 'ROLE_BRANCH_CASHIER'
-//    AND (u.updatedAt IS NULL OR u.updatedAt < :cutoffDate)
-//    """)
-//	List<User> findInactiveCashiers(@Param("storeAdminId") Long storeAdminId,
-//									@Param("cutoffDate") LocalDateTime cutoffDate);
-
 }
