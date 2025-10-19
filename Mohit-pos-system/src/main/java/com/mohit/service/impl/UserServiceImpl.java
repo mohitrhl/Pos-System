@@ -1,7 +1,5 @@
 package com.mohit.service.impl;
 
-
-
 import com.mohit.configuration.JwtProvider;
 import com.mohit.domain.UserRole;
 import com.mohit.exception.UserException;
@@ -19,16 +17,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-
 import java.util.List;
 import java.util.Set;
-
 
 import com.mohit.modal.User;
 import com.mohit.repository.BranchRepository;
 import com.mohit.repository.StoreRepository;
-
-
 
 @Service
 @RequiredArgsConstructor
